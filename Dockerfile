@@ -3,6 +3,9 @@ FROM node:22-alpine AS builder
 # better-sqlite3 native compilation deps
 RUN apk add --no-cache python3 make g++
 
+# Corporate proxy SSL workaround
+RUN npm config set strict-ssl false
+
 WORKDIR /app
 
 COPY package.json ./
@@ -23,6 +26,9 @@ FROM node:22-alpine
 
 # Runtime deps for better-sqlite3
 RUN apk add --no-cache python3 make g++
+
+# Corporate proxy SSL workaround
+RUN npm config set strict-ssl false
 
 WORKDIR /app
 
