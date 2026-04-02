@@ -19,8 +19,6 @@ FROM node:22-alpine
 
 WORKDIR /app
 
-RUN apk add --no-cache sqlite
-
 COPY package.json ./
 COPY packages/server/package.json packages/server/
 COPY packages/ui/package.json packages/ui/
