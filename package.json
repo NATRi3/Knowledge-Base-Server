@@ -1,0 +1,17 @@
+{
+  "name": "enterprise-knowledge-base",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/server",
+    "packages/ui",
+    "packages/mcp"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev -w packages/server",
+    "dev:ui": "npm run dev -w packages/ui",
+    "dev:mcp": "npm run dev -w packages/mcp",
+    "build": "npm run build -w packages/server && npm run build -w packages/ui && npm run build -w packages/mcp",
+    "start": "npm run start -w packages/server"
+  }
+}
